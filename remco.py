@@ -7,7 +7,7 @@ website_list = ["www.youtube.com", "youtube.com", "www.facebook.com", "facebook.
 while True:
     if dt(dt.now().year,dt.now().month,dt.now().day,8) < dt.now() < dt(dt.now().year,dt.now().month,dt.now().day,12): # if funkcija salīdzina ar lokāla datora laiku
         print("Vel vajag pastrādāt") #rezultāta izvade
-        file = open(host_path,"r+") #definējam mapi ar read
+        file = open(host_path,"r+") #definējam tiesības mapei ar read
         content = file.read()
         for website in website_list: #funkcija ierakstu meklēšanai
             if website in content: 
@@ -16,7 +16,7 @@ while True:
                 file.write(redirect + " " + website + "\n") #ja iestājās pretējais kritērijs, ierakstam vērtibas
     else:
         print("Atpūšamies") #ja laiks nesakrīt izvada šo
-        file = open(host_path,'r+')  #definējam mapi ar read
+        file = open(host_path,'r+') #definējam tiesības mapei ar read
         content = file.readlines() 
         file.seek(0) #funkcija pārbauda vai ir kaut kādi ieraksti no weblist
         for line in content: #norāda ko jādara ja ir
